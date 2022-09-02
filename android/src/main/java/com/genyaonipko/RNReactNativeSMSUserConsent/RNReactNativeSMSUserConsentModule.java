@@ -83,7 +83,7 @@ public class RNReactNativeSMSUserConsentModule extends ReactContextBaseJavaModul
     private void registerReceiver() {
         receiver = new SmsRetrieveBroadcastReceiver(reactContext.getCurrentActivity());
         IntentFilter intentFilter = new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION);
-        reactContext.getCurrentActivity().registerReceiver(receiver, intentFilter);
+        reactContext.getCurrentActivity().registerReceiver(receiver, intentFilter, SmsRetriever.SEND_PERMISSION, null);
     }
 
     private void unregisterReceiver() {
